@@ -3,7 +3,7 @@ Clase derivada Automovil que hereda de Vehiculo.
 Demuestra herencia, polimorfismo y agrega funcionalidades específicas.
 """
 
-from models.vehiculo import Vehiculo  # Importa la clase base Vehiculo
+from modelos.vehiculos import Vehiculo  # Importa la clase base Vehiculo
 
 class Automovil(Vehiculo):  # Herencia de Vehiculo
     def __init__(self, marca, modelo, año, tipo_combustible, num_puertas):  # Constructor de Automovil
@@ -17,16 +17,17 @@ class Automovil(Vehiculo):  # Herencia de Vehiculo
         self.__nivel_combustible = 50  # Porcentaje inicial
     
     # GETTERS Y SETTERS ESPECÍFICOS
-    def get_tipo_combustible(self):   #
-        return self.__tipo_combustible
+    def get_tipo_combustible(self):   # Devuelve el tipo de combustible
+        return self.__tipo_combustible    # Devuelve el tipo de combustible
     
-    def get_num_puertas(self):
-        return self.__num_puertas
+    def get_num_puertas(self):   # Devuelve el número de puertas
+        return self.__num_puertas   # Devuelve el número de puertas
     
-    def get_nivel_combustible(self):
+    def get_nivel_combustible(self):   # Devuelve el nivel de combustible
         return self.__nivel_combustible
     
-    def cargar_combustible(self, cantidad):
+    def cargar_combustible(self, cantidad):   # Carga combustible
+        
         """Método específico para cargar combustible"""
         if 0 <= cantidad <= 100:
             self.__nivel_combustible = min(100, self.__nivel_combustible + cantidad)
