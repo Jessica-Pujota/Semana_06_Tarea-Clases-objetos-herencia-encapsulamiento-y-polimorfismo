@@ -3,11 +3,11 @@ Archivo principal para ejecutar la aplicación.
 Demuestra la creación de instancias y el funcionamiento del sistema.
 """
 
-from models.vehiculo import Vehiculo
-from models.automovil import Automovil
-from services.gestor_vehiculos import GestorVehiculos
-
-def main():
+from modelos.vehiculos import Vehiculo   # Importa la clase Vehiculo    
+from modelos.automoviles import Automovil    # Importa la clase Automovil
+from servicios.gestor_de_vehiculos import GestorVehiculos   # Importa el gestor de vehículos
+    
+def main():    
     """Función principal que demuestra todos los conceptos de POO"""
     
     print("=== DEMOSTRACIÓN DE CONCEPTOS DE POO ===\n")
@@ -22,8 +22,8 @@ def main():
     # Instancias de la clase derivada Automovil
     auto1 = Automovil("Toyota", "Corolla", 2022, "Gasolina", 4)
     auto2 = Automovil("Ford", "Mustang", 2023, "Eléctrico", 2)
-    print(f"   Automóvil 1: {auto1.obtener_informacion()}")
-    print(f"   Automóvil 2: {auto2.obtener_informacion()}")
+    print(f"   Automovil 1: {auto1.obtener_informacion()}")
+    print(f"   Automovil 2: {auto2.obtener_informacion()}")
     
     # 2. DEMOSTRACIÓN DE ENCAPSULACIÓN
     print("\n2. DEMOSTRACIÓN DE ENCAPSULACIÓN:")
