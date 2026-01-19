@@ -1,4 +1,4 @@
-# Clase base Vehiculo que demuestra encapsulación y define la estructura base para todos los vehículos del sistema.
+"""Clase base Vehiculo que demuestra encapsulación y define la estructura base para todos los vehículos del sistema"""
 
 class Vehiculo:   #definición de la clase vehículo
     def __init__(self, marca, modelo, año):    # # Constructor de la clase      
@@ -11,7 +11,6 @@ class Vehiculo:   #definición de la clase vehículo
         self.__kilometraje = 0  # Atributo privado inicializado en 0
     
     # -------- GETTERS Y SETTERS (encapsulación)----------
-    
     def get_marca(self):   # Método getter para obtener el valor de marca
         """Getter para marca"""
         return self._marca     # Retorna el valor del atributo protegido
@@ -41,17 +40,12 @@ class Vehiculo:   #definición de la clase vehículo
     
     # MÉTODOS COMUNES
     def obtener_informacion(self):   #Método para obtener informacion del vehículo
-        """
-        Método que será sobrescrito en clases derivadas (polimorfismo).
-        Retorna información básica del vehículo.
-        """
+        """Método que será sobrescrito en clases derivadas (polimorfismo). Retorna información básica del vehículo."""
+        
         return f"{self._marca} {self._modelo} ({self.__año})"
     
     def viajar(self, distancia):
-        """
-        Método para simular un viaje.
-        Aumenta el kilometraje del vehículo.
-        """
+        """Método para simular un viaje. Aumenta el kilometraje del vehículo."""
         if distancia > 0:   # Validación de distancia positiva
             self.__kilometraje += distancia
             return f"Viaje de {distancia} km realizado. Kilometraje total: {self.__kilometraje} km"

@@ -52,7 +52,7 @@ def main():
         # POLIMORFISMO: Mismo método, comportamientos diferentes
         print(f"   - {vehiculo.obtener_informacion()}")
     
-    print("\n   Llamada a viajar() en diferentes tipos:")
+    print("\n   Llamada a viajar() en diferentes tipos:")   #Demostración de polimorfismo
     print(f"   Vehículo base: {vehiculo_base.viajar(100)}")
     print(f"   Automóvil 1: {auto1.viajar(100)}")
     

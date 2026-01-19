@@ -6,22 +6,18 @@ Demuestra herencia, polimorfismo y agrega funcionalidades específicas.
 from modelos.vehiculos import Vehiculo  # Importa la clase base Vehiculo
 
 class Automovil(Vehiculo):  # Herencia de Vehiculo
-    def __init__(self, marca, modelo, año, tipo_combustible, num_puertas):  # Constructor de Automovil
+    def __init__(self, marca, modelo, año, tipo_combustible):  # Constructor de Automovil
         """
         Constructor de Automovil.
         Llama al constructor de la clase base y agrega atributos específicos.
         """
         super().__init__(marca, modelo, año)  # Llamada al constructor de la clase base
         self.__tipo_combustible = tipo_combustible  # Atributo privado
-        self.__num_puertas = num_puertas   # Atributo privado
         self.__nivel_combustible = 50  # Porcentaje inicial
     
     # GETTERS Y SETTERS ESPECÍFICOS
     def get_tipo_combustible(self):   # Devuelve el tipo de combustible
         return self.__tipo_combustible    # Devuelve el tipo de combustible
-    
-    def get_num_puertas(self):   # Devuelve el número de puertas
-        return self.__num_puertas   # Devuelve el número de puertas
     
     def get_nivel_combustible(self):   # Devuelve el nivel de combustible
         return self.__nivel_combustible
@@ -29,7 +25,7 @@ class Automovil(Vehiculo):  # Herencia de Vehiculo
     def cargar_combustible(self, cantidad):   # Carga combustible
         
         """Método específico para cargar combustible"""
-        if 0 <= cantidad <= 100:
+        if 0 <= cantidad <= 100:   
             self.__nivel_combustible = min(100, self.__nivel_combustible + cantidad)
             return f"Combustible cargado. Nivel actual: {self.__nivel_combustible}%"
         return "Cantidad inválida"
@@ -41,8 +37,8 @@ class Automovil(Vehiculo):  # Herencia de Vehiculo
         Ejemplo de polimorfismo.
         """
         info_base = super().obtener_informacion()
-        return f"{info_base} | Combustible: {self.__tipo_combustible} | Puertas: {self.__num_puertas}"
-    
+        return f"{info_base} | Combustible: {self.__tipo_combustible}"
+
     def viajar(self, distancia):
         """
         Sobrescribe el método viajar para considerar el consumo de combustible.
@@ -61,6 +57,6 @@ class Automovil(Vehiculo):  # Herencia de Vehiculo
         """Método específico de Automovil"""
         return "Maletero abierto"
     
-    def tocar_bocina(self):
+    def tocar_bocina(self):  # Método específico de Automovil
         """Método específico de Automovil"""
         return "¡Beep! ¡Beep!"
